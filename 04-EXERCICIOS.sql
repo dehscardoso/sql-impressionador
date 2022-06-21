@@ -33,10 +33,10 @@ FROM
 	DimCustomer
 
 SELECT 
-	CustomerKey AS 'Código cliente', 
+	CustomerKey AS 'Código do Cliente', 
 	FirstName AS 'Nome', 
 	EmailAddress AS 'E-mail',
-	BirthDate AS 'Data de nascimento'
+	BirthDate AS 'Data de Nascimento'
 FROM 
 	DimCustomer
 
@@ -69,7 +69,7 @@ SELECT TOP(10) PERCENT * FROM DimCustomer
 SELECT TOP(100)
 	FirstName AS 'Nome', 
 	EmailAddress AS 'E-mail',
-	BirthDate AS 'Data de nascimento'
+	BirthDate AS 'Data de Nascimento'
 FROM 
 	DimCustomer
 
@@ -77,6 +77,7 @@ FROM
 /*A empresa Contoso precisa fazer contato com os fornecedores de
 produtos para repor o estoque. Você é da área de compras e precisa
 descobrir quem são esses fornecedores.
+
 Utilize um comando em SQL para retornar apenas os nomes dos
 fornecedores na tabela dimProduct e renomeie essa nova coluna da
 tabela.*/
@@ -86,11 +87,10 @@ SELECT DISTINCT(Manufacturer) AS 'Fornecedor' FROM dimProduct
 /*O seu trabalho de investigação não para. Você precisa descobrir se existe
 algum produto registrado na base de produtos que ainda não tenha sido
 vendido. Tente chegar nessa informação.
+
 Obs: caso tenha algum produto que ainda não tenha sido vendido, você
 não precisa descobrir qual é, é suficiente saber se teve ou não algum
 produto que ainda não foi vendido.*/
 
 SELECT DISTINCT COUNT(ProductKey) AS 'Quantidade de Produtos' FROM DimProduct
 SELECT DISTINCT COUNT(ProductKey) AS 'Produtos Vendidos' FROM FactSales
-
-
